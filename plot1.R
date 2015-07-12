@@ -7,6 +7,10 @@ plotGapHistogram <- function(epcData) {
 }
 
 plot1 <- function(filename) {
-    x <- readElectricPowerConsumptionData(filename)
+    x <- loadData(filename)
     plotGapHistogram(x)
+}
+
+plot1ToPng <- function(dataFile) {
+    plot2Png("plot1.png", function() {plot1(dataFile)})
 }
